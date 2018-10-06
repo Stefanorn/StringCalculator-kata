@@ -1,12 +1,12 @@
 function add(number){
 
-	var splitter = ",";
+	var pattern = /[,]/;
 	if(number == ""){
 		return 0;
 	}
-	else if( number.includes(splitter) ){
+	else if( pattern.test(number) ){
 		var totalSum = 0;
-		number = number.split(splitter);
+		number = number.split(pattern);
 		for( var i = 0; i < number.length; i++){
 			totalSum += parseInt(number[i]);
 		}

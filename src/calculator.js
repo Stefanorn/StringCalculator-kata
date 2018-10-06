@@ -1,6 +1,6 @@
 function add(number){
 
-	var pattern = /[,]/;
+	var pattern = /[,\n]/;
 	if(number == ""){
 		return 0;
 	}

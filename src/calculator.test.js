@@ -12,6 +12,11 @@ it("Should return 6", () => {
 it("Should return 9", () => {
 	expect(add("3,3,3")).toBe(9);
 });
+
 it("Should return 9", () => {
 	expect(add("1,1,1,1,1,1,1,1,1")).toBe(9);
+});
+
+it("Should return 8", () => {
+	expect(add("1,1\n1,1\n1,1\n1,1")).toBe(8);
 });

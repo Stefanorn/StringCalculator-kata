@@ -20,3 +20,10 @@ it("Should return 9", () => {
 it("Should return 8", () => {
 	expect(add("1,1\n1,1\n1,1\n1,1")).toBe(8);
 });
+
+it("Should throw an error with Error code 'Negatives not allowed: -1'", () => {
+	function tryAdd (){
+		add("-1,2");
+	}
+	expect(tryAdd).toThrowError("Negatives not allowed: -1");
+});

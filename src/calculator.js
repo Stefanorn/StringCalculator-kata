@@ -1,6 +1,19 @@
 function add(number){
 
 	var pattern = /[,\n]/;
+	var negativeNumberMask = /-\d*/g;
+
+	if( negativeNumberMask.test(number) ){
+
+		number = number.match(negativeNumberMask);
+		var derp = "";
+		for(var i = 0; i < number.length; i++){
+			derp += number[i] +", "
+		}
+		derp = derp.slice(0, derp.length - 2);
+		throw "Negatives not allowed: " + derp;
+	}
+
 	if(number == ""){
 		return 0;
 	}
@@ -22,3 +35,4 @@ function add(number){
 }
 
 module.exports = add;
+

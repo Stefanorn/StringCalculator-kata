@@ -64,3 +64,15 @@ it("Should throw an error with Error code 'Negatives not allowed: -1, -1000", ()
 	expect(tryAdd).toThrowError("Negatives not allowed: -1, -1000");
 });
 
+it("Should throw an error with Error code 'Negatives not allowed: -1, -1000", () => {
+	function tryAdd (){
+		add("\\\\;/n5;-10,10");
+	}
+	expect(tryAdd).toThrowError("Negatives not allowed: -10");
+});
+it("Should return 25", () => {
+	expect(add("\\\\;/n5;10,10")).toBe(25);
+});
+it("Should return 25", () => {
+	expect(add("\\\\;/n5;10,10;1000")).toBe(25);
+});

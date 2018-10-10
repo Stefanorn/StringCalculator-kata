@@ -47,4 +47,13 @@ it("Should throw an error with Error code 'Negatives not allowed: -2, -3, -43, -
 	}
 	expect(tryAdd).toThrowError("Negatives not allowed: -1, -1");
 });
+it("Should return 5", () => {
+	expect(add("5,1000")).toBe(5);
+});
+it("Should return 5", () => {
+	expect(add("5\n1000")).toBe(5);
+});
+it("Should return 5", () => {
+	expect(add("999,5\n1000")).toBe(1004);
+});
 

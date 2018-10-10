@@ -34,3 +34,17 @@ it("Should throw an error with Error code 'Negatives not allowed: -2, -3'", () =
 	}
 	expect(tryAdd).toThrowError("Negatives not allowed: -2, -3");
 });
+
+it("Should throw an error with Error code 'Negatives not allowed: -2, -3, -43, -2'", () => {
+	function tryAdd (){
+		add("-2,2\n-3,-43,3\n2,-2");
+	}
+	expect(tryAdd).toThrowError("Negatives not allowed: -2, -3, -43, -2");
+});
+ it("Should throw an error with Error code 'Negatives not allowed: -1, -1", () => {
+	function tryAdd (){
+		add("1\n-1\n-1");
+	}
+	expect(tryAdd).toThrowError("Negatives not allowed: -1, -1");
+});
+

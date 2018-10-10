@@ -4,10 +4,6 @@ function add(number){
 		return 0;
 	}
 
-	var maxNumbersPattern = /\d\d\d\d\d*/g
-	number = number.replace(maxNumbersPattern,"0");
-
-
 	var negativeNumberMask = /-\d*/g;
 	if( negativeNumberMask.test(number) ){
 		var errorString = "Negatives not allowed: ";
@@ -19,6 +15,9 @@ function add(number){
 		errorString = errorString.slice(0, errorString.length - 2);
 		throw errorString;
 	}
+
+	var maxNumbersPattern = /\d\d\d\d\d*/g
+	number = number.replace(maxNumbersPattern,"0");
 
 	var pattern = /[,\n]/;
 	if( pattern.test(number) ){
@@ -35,3 +34,4 @@ function add(number){
 }
 
 module.exports = add;
+
